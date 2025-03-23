@@ -177,3 +177,23 @@ const george = new Adventurer("George", "Fighter");
 brad.duel(george);
 
 // Part Seven
+
+class Dragon extends Character {
+  constructor(name, element) {
+    super(name);
+    this.element = element;
+  }
+
+  breathe(target) {
+    console.log(
+      `${this.name} breathes ${this.element} at ${target.name}, dealing 20 damage!`
+    );
+    target.health -= 20;
+  }
+}
+
+const puff = new Dragon("Puff", "rainbow smoke");
+const fred = new Adventurer("Fred", "Wizard");
+
+puff.breathe(fred);
+console.log(`${fred.name}'s health is now ${fred.health}`);
